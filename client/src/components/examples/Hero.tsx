@@ -1,5 +1,6 @@
 import Hero from '../Hero';
-import heroImage from '@assets/generated_images/Hero_workspace_tech_setup_88c109c8.png';
+
+const heroImage = "/attached_assets/generated_images/Hero_workspace_tech_setup_88c109c8.png";
 
 export default function HeroExample() {
   return (

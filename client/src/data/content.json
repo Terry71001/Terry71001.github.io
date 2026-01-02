@@ -1,0 +1,32 @@
+{
+  "portfolio": [
+    {
+      "id": "2",
+      "title": "現代網頁設計",
+      "category": "Web Design",
+      "tags": [
+        "React",
+        "Tailwind",
+        "UI/UX"
+      ],
+      "year": "2024",
+      "imageUrl": "/attached_assets/generated_images/Web_design_project_mockup_fa6abe07.png",
+      "content": "# 現代網頁設計\n\n這是一個使用 React 和 Tailwind CSS 開發的現代化網頁設計專案。\n\n## 設計特色\n\n專注於使用者體驗和視覺美感的平衡，創造出既美觀又實用的介面設計。\n\n### 技術棧\n\n- **前端框架**: React\n- **樣式工具**: Tailwind CSS\n- **設計原則**: 響應式設計、無障礙設計\n\n## 專案亮點\n\n- 完全響應式設計，適配各種裝置\n- 優化的載入速度和效能\n- 直觀的使用者介面\n",
+      "slug": "現代網頁設計"
+    },
+    {
+      "id": "1",
+      "title": "幾何藝術創作",
+      "category": "3D Art",
+      "tags": [
+        "Blender",
+        "3D",
+        "Design"
+      ],
+      "year": "2024",
+      "imageUrl": "/attached_assets/generated_images/3D_geometric_art_project_31648183.png",
+      "content": "# 幾何藝術創作\n\n這是一個使用 Blender 創作的 3D 幾何藝術作品，展現了現代數位藝術的美感。\n\n## 創作理念\n\n這個作品探索了幾何形狀與光影的互動，透過簡約的設計語言傳達出複雜的視覺效果。\n\n### 技術特點\n\n- 使用 Blender 進行 3D 建模\n- 精心設計的光影效果\n- 現代化的幾何構圖\n\n## 創作過程\n\n從概念發想到最終成品，整個創作過程花費了約兩週的時間。主要挑戰在於如何平衡幾何形狀的複雜度與視覺美感。\n",
+      "slug": "幾何藝術創作"
+    }
+  ]
+}

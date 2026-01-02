@@ -1,22 +1,21 @@
+import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
 import TagPill from "./TagPill";
+import type { Portfolio } from "@/types/content";
 
 interface ProjectCardProps {
-  title: string;
-  category: string;
-  tags: string[];
-  imageUrl: string;
-  year: string;
-  onClick?: () => void;
+  project: Portfolio;
 }
 
-export default function ProjectCard({ title, category, tags, imageUrl, year, onClick }: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
+  const { title, category, tags, imageUrl, year, slug } = project;
+  
   return (
-    <Card
-      className="group cursor-pointer overflow-hidden hover-elevate active-elevate-2 transition-transform duration-300 hover:scale-105"
-      onClick={onClick}
-      data-testid={`card-project-${title}`}
-    >
+    <Link href={`/projects/${slug}`}>
+      <Card
+        className="group cursor-pointer overflow-hidden hover-elevate active-elevate-2 transition-transform duration-300 hover:scale-105"
+        data-testid={`card-project-${title}`}
+      >
       <div className="aspect-[4/3] overflow-hidden bg-muted">
         <img
           src={imageUrl}
@@ -43,5 +42,6 @@ export default function ProjectCard({ title, category, tags, imageUrl, year, onC
         </div>
       </div>
     </Card>
+    </Link>
   );
 }

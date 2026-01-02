@@ -1,0 +1,30 @@
+id: "2"
+title: "現代網頁設計"
+category: "Web Design"
+tags:
+  - "React"
+  - "Tailwind"
+  - "UI/UX"
+year: "2024"
+imageUrl: "/attached_assets/generated_images/Web_design_project_mockup_fa6abe07.png"
+content: |
+  # 現代網頁設計
+
+  這是一個使用 React 和 Tailwind CSS 開發的現代化網頁設計專案。
+
+  ## 設計特色
+
+  專注於使用者體驗和視覺美感的平衡，創造出既美觀又實用的介面設計。
+
+  ### 技術棧
+
+  - **前端框架**: React
+  - **樣式工具**: Tailwind CSS
+  - **設計原則**: 響應式設計、無障礙設計
+
+  ## 專案亮點
+
+  - 完全響應式設計，適配各種裝置
+  - 優化的載入速度和效能
+  - 直觀的使用者介面
+

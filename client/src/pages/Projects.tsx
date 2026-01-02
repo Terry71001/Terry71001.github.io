@@ -1,73 +1,21 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Navigation from "@/components/Navigation";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import project1 from '@assets/generated_images/3D_geometric_art_project_31648183.png';
-import project2 from '@assets/generated_images/Web_design_project_mockup_fa6abe07.png';
-import project3 from '@assets/generated_images/Mobile_app_UI_design_f894005c.png';
-import project4 from '@assets/generated_images/Code_visualization_artwork_3f4c5353.png';
+import { portfolio } from "@/data/content";
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("全部");
 
-  const categories = ["全部", "Web Design", "3D Art", "Mobile App", "Creative Code"];
+  const allProjects = portfolio;
+  const categories = ["全部", ...Array.from(new Set(allProjects.map((p) => p.category)))];
 
-  const allProjects = [
-    {
-      id: "1",
-      title: "幾何藝術創作",
-      category: "3D Art",
-      tags: ["Blender", "3D", "Design"],
-      imageUrl: project1,
-      year: "2024",
-    },
-    {
-      id: "2",
-      title: "現代網頁設計",
-      category: "Web Design",
-      tags: ["React", "Tailwind", "UI/UX"],
-      imageUrl: project2,
-      year: "2024",
-    },
-    {
-      id: "3",
-      title: "行動應用介面",
-      category: "Mobile App",
-      tags: ["Flutter", "UI", "Design"],
-      imageUrl: project3,
-      year: "2023",
-    },
-    {
-      id: "4",
-      title: "程式視覺化",
-      category: "Creative Code",
-      tags: ["P5.js", "WebGL", "Art"],
-      imageUrl: project4,
-      year: "2024",
-    },
-    {
-      id: "5",
-      title: "響應式網站",
-      category: "Web Design",
-      tags: ["HTML", "CSS", "JavaScript"],
-      imageUrl: project2,
-      year: "2023",
-    },
-    {
-      id: "6",
-      title: "3D 角色建模",
-      category: "3D Art",
-      tags: ["Blender", "Modeling", "Rendering"],
-      imageUrl: project1,
-      year: "2024",
-    },
-  ];
-
-  const filteredProjects =
-    activeCategory === "全部"
+  const filteredProjects = useMemo(() => {
+    return activeCategory === "全部"
       ? allProjects
       : allProjects.filter((p) => p.category === activeCategory);
+  }, [activeCategory, allProjects]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -103,8 +51,7 @@ export default function Projects() {
               {filteredProjects.map((project) => (
                 <ProjectCard
                   key={project.id}
-                  {...project}
-                  onClick={() => console.log(`Navigate to project ${project.id}`)}
+                  project={project}
                 />
               ))}
             </div>

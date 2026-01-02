@@ -5,47 +5,12 @@ import SkillCard from "@/components/SkillCard";
 import Footer from "@/components/Footer";
 import { Code2, Palette, Database, Layers, Cpu, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from '@assets/generated_images/Hero_workspace_tech_setup_88c109c8.png';
-import project1 from '@assets/generated_images/3D_geometric_art_project_31648183.png';
-import project2 from '@assets/generated_images/Web_design_project_mockup_fa6abe07.png';
-import project3 from '@assets/generated_images/Mobile_app_UI_design_f894005c.png';
-import project4 from '@assets/generated_images/Code_visualization_artwork_3f4c5353.png';
+import { portfolio } from "@/data/content";
+
+const heroImage = "/attached_assets/generated_images/Hero_workspace_tech_setup_88c109c8.png";
 
 export default function Home() {
-  const featuredProjects = [
-    {
-      id: "1",
-      title: "幾何藝術創作",
-      category: "3D Art",
-      tags: ["Blender", "3D", "Design"],
-      imageUrl: project1,
-      year: "2024",
-    },
-    {
-      id: "2",
-      title: "現代網頁設計",
-      category: "Web Design",
-      tags: ["React", "Tailwind", "UI/UX"],
-      imageUrl: project2,
-      year: "2024",
-    },
-    {
-      id: "3",
-      title: "行動應用介面",
-      category: "Mobile App",
-      tags: ["Flutter", "UI", "Design"],
-      imageUrl: project3,
-      year: "2023",
-    },
-    {
-      id: "4",
-      title: "程式視覺化",
-      category: "Creative Code",
-      tags: ["P5.js", "WebGL", "Art"],
-      imageUrl: project4,
-      year: "2024",
-    },
-  ];
+  const featuredProjects = portfolio.slice(0, 4);
 
   const skills = [
     { icon: Code2, name: "程式開發" },
@@ -96,8 +61,7 @@ export default function Home() {
             {featuredProjects.map((project) => (
               <ProjectCard
                 key={project.id}
-                {...project}
-                onClick={() => console.log(`Navigate to project ${project.id}`)}
+                project={project}
               />
             ))}
           </div>
@@ -146,11 +110,13 @@ export default function Home() {
             </div>
             <div className="order-1 lg:order-2">
               <div className="aspect-square rounded-lg overflow-hidden bg-muted">
-                <img
-                  src={project1}
-                  alt="About preview"
-                  className="w-full h-full object-cover"
-                />
+                {portfolio.length > 0 && (
+                  <img
+                    src={portfolio[0].imageUrl}
+                    alt="About preview"
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
             </div>
           </div>

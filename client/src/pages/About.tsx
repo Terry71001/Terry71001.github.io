@@ -2,7 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SkillCard from "@/components/SkillCard";
 import { Code2, Palette, Database, Layers, Cpu, Smartphone, Globe, Boxes, Zap } from "lucide-react";
-import profileImage from '@assets/generated_images/Professional_student_portrait_633262b7.png';
+
+const profileImage = "/attached_assets/generated_images/Professional_student_portrait_633262b7.png";
 
 export default function About() {
   const skills = [
